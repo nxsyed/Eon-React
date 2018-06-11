@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import LineChart from './LineChart';
+import Chart from './Chart';
 
 storiesOf('Charts', module)
-  .add('Line Chart', () => (
-    <LineChart>Hello, I'm a Title component</LineChart>
+  .add('Chart', () => (
+    <Chart>Hello, I'm a Title component</Chart>
   ));

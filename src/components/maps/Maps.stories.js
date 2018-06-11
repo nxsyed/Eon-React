@@ -4,5 +4,5 @@ import Map from './Map';
 
 storiesOf('Map', module)
   .add('Map', () => (
-    <Map>Hello, I'm a Title component</Map>
+    <Map/>
   ));
