@@ -7,15 +7,11 @@ class Chart extends React.Component{
 
   constructor(props){
     super(props);
-    this.pubnub = new PubNubReact({ 
-      subscribeKey: this.props.subKey 
-    });
-    this.pubnub.init(this);
   }
 
   componentDidMount(){
     eon({
-      pubnub: this.pubnub,
+      pubnub: this.props.pubnub,
       channels: this.props.channels,
       generate: {
         bindto: '#chart',
@@ -37,6 +33,7 @@ Chart.propTypes = {
   subKey: PropTypes.string,
   channels: PropTypes.array,
   labels: PropTypes.bool,
-  type: PropTypes.string
+  type: PropTypes.string,
+  pubnub: PropTypes.object
 };
 export default Chart;
