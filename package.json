@@ -5,6 +5,7 @@
   "dependencies": {
     "eon-chart": "^1.3.1",
     "eon-map": "^1.2.2",
+    "prop-types": "^15.6.1",
     "pubnub-react": "^1.2.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

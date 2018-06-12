@@ -20,7 +20,7 @@ class Map extends React.Component{
       id: 'map',
       provider: 'google',
       googleKey: 'AIzaSyB3LP6uG9CJka188uLdEEXOdKsVMMoxBs8',
-      channels: ['pubnub-mapbox'] })
+      channels: [channel] })
   }
 
 

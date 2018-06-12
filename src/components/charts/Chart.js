@@ -1,5 +1,6 @@
 import React from 'react';
 import PubNubReact from 'pubnub-react';
+import PropTypes from "prop-types";
 import eon from 'eon-chart';
 
 class Chart extends React.Component{
@@ -7,8 +8,7 @@ class Chart extends React.Component{
   constructor(props){
     super(props);
     this.pubnub = new PubNubReact({ 
-      publishKey: 'pub-c-00eff6d9-ef6a-459c-9452-7e34aba11cba', 
-      subscribeKey: 'sub-c-6af8440e-4890-11e8-a3a7-d29c801c92ae' 
+      subscribeKey: this.props.subKey 
     });
     this.pubnub.init(this);
   }
@@ -16,21 +16,27 @@ class Chart extends React.Component{
   componentDidMount(){
     eon({
       pubnub: this.pubnub,
-      channels: ["c3-spline"],
+      channels: this.props.channels,
       generate: {
         bindto: '#chart',
         data: {
-          labels: true
+          labels: this.props.labels || true,
+          //type: this.props.type || 'line'
         }
       }
     });
   }
 
   render(){
-    console.log(eon);
     return(
       <div id="chart"> </div>
     );
   }
 }
+Chart.propTypes = {
+  subKey: PropTypes.string,
+  channels: PropTypes.array,
+  labels: PropTypes.bool
+  //type: PropTypes.string
+};
 export default Chart;
