@@ -21,7 +21,7 @@ class Chart extends React.Component{
         bindto: '#chart',
         data: {
           labels: this.props.labels || true,
-          //type: this.props.type || 'line'
+          type: this.props.type || 'line'
         }
       }
     });
@@ -36,7 +36,7 @@ class Chart extends React.Component{
 Chart.propTypes = {
   subKey: PropTypes.string,
   channels: PropTypes.array,
-  labels: PropTypes.bool
-  //type: PropTypes.string
+  labels: PropTypes.bool,
+  type: PropTypes.string
 };
 export default Chart;
